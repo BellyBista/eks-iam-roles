@@ -11,7 +11,7 @@ resource "aws_iam_role_policy_attachment" "nodes-AmazonEKSWorkerNodePolicy" {
 }
 
 # Role and policies for eks cluster
-resource "aws_iam_role" "cluster" {
+resource "aws_iam_role" "demo" {
   name               = "eks-cluster-demo"
   assume_role_policy = data.aws_iam_policy_document.eks_assume_role.json
 }
@@ -19,6 +19,6 @@ resource "aws_iam_role" "cluster" {
 resource "aws_iam_role_policy_attachment" "demo-AmazonEKSClusterPolicy" {
   for_each   = toset(local.eks_policies)
   policy_arn = each.value
-  role       = aws_iam_role.cluster.name
+  role       = aws_iam_role.demo.name
 
 }
