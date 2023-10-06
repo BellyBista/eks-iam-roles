@@ -3,5 +3,5 @@ output "node_role" {
 }
 
 output "cluster_role" {
-  value = aws_iam_role.demo.name
+  value = aws_iam_role.demo.arn
 }
