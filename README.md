@@ -72,7 +72,6 @@ module "eks_iam_roles" {
 - **node_role:** The ARN of the EKS node group role (`eks-node-group-nodes)`)
 
 ## Notes
-- This module is still in progress.
 
 - Please ensure that you have the necessary AWS credentials and permissions before applying this module.
 
