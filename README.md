@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Terraform module creates IAM roles necessary for an Amazon EKS (Elastic Kubernetes Service) cluster. It includes two roles: one for the EKS cluster itself (`eks-cluster-demo`) and one for the EKS worker nodes (`eks-node-group-nodes`).
+This Terraform module creates IAM roles necessary for an Amazon EKS (Elastic Kubernetes Service) cluster. It includes two roles: one for the EKS cluster itself (`eks-cluster`) and one for the EKS worker nodes (`eks-node-group-nodes`).
 
 ## Usage
 
@@ -18,7 +18,7 @@ module "eks_iam_roles" {
 
 ## 1. EKS Cluster Role
 
-- **Name:** `eks-cluster-demo`
+- **Name:** `eks-cluster`
 - **Assume Role Policy:**
 
 ```json
@@ -68,7 +68,7 @@ module "eks_iam_roles" {
 
 ## Outputs
 
-- **cluster_role:** The ARN of the EKS cluster role(`eks-cluster-demo`)
+- **cluster_role:** The ARN of the EKS cluster role(`eks-cluster`)
 - **node_role:** The ARN of the EKS node group role (`eks-node-group-nodes)`)
 
 ## Notes
