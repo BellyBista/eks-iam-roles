@@ -8,7 +8,7 @@ This Terraform module creates IAM roles necessary for an Amazon EKS (Elastic Kub
 
 ```hcl
 module "eks_iam_roles" {
-  source = "git::https://github.com/BellyBista/IAM-module.git?ref=v1.0.0"
+  source = "git::https://github.com/BellyBista/eks-iam-roles.git?ref=v1.0.0"
 
   # Add any required variables here
 }
