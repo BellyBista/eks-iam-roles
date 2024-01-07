@@ -1,6 +1,6 @@
 module.exports = {
     branches: "main",
-    repositoryUrl: "https://github.com/BellyBista/IAM-module.git",
+    repositoryUrl: "https://github.com/BellyBista/eks-iam-roles.git",
     plugins: [
       '@semantic-release/commit-analyzer',
       '@semantic-release/release-notes-generator',
