@@ -23,17 +23,18 @@ module "eks_iam_roles" {
 
 ```json
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "eks.amazonaws.com"
-      },
-      "Sid": "AllowEKSAssumeRole"
+  statement {
+    sid    = "AllowEKSAssumeRole"
+    effect = "Allow"
+    actions = [
+      "sts:AssumeRole"
+    ]
+    principals {
+      type        = "Service"
+      identifiers = ["eks.amazonaws.com"]
     }
-  ]
+  }
+
 }
 ```
 - **Attached Polcies:**
@@ -46,17 +47,18 @@ module "eks_iam_roles" {
 
 ```json
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "ec2.amazonaws.com"
-      },
-      "Sid": "AllowEKSAssumeRole"
+  statement {
+    sid    = "AllowEKSAssumeRole"
+    effect = "Allow"
+    actions = [
+      "sts:AssumeRole",
+    ]
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
     }
-  ]
+  }
+
 }
 ```
 
