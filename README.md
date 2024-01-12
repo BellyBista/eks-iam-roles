@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Terraform module creates IAM roles necessary for an Amazon EKS (Elastic Kubernetes Service) cluster. It includes two roles: one for the EKS cluster itself (`eks-cluster`) and one for the EKS worker nodes (`eks-node-group-nodes`).
+This Terraform module configures AWS Identity and Access Management (IAM) resources for managing user access and permissions within your AWS environment. The script creates IAM users, groups, policies, and roles tailored for EKS (Elastic Kubernetes Service) administration.
 
 ## Usage
 
@@ -64,10 +64,33 @@ module "eks_iam_roles" {
   - **`AmazonEKSWorkerNodePolicy`**
   - **`AmazonEKS_CNI_Policy`**
 
+## 3. IAM Password Policy
+- Created an IAM password policy enforcing strict password requirements for security.
+
+## 4. IAM Groups
+- **EKS Developer Group:**
+  - Created an IAM group named "developer" for EKS developers that doesn't require administrator access.
+- **EKS Masters Group:**
+  - Created an IAM group named "masters" for EKS administrators.
+
+## 5. IAM Group Memberships
+- Established group memberships for users in the "developer" and "masters" groups.
+
+## 6. IAM Group Policies
+- **Developer Group Policy:**
+  -   Created an IAM policy for the "developer" group, allowing specific EKS acttions.
+- **Masters Group Policy**
+  - Created an IAM policy for the "masters" group, allowing the assumption of the admin role.
+
+## 7. IAM Roles and Policies
+- Created a broad IAM policy and IAM role  allowing various actions.
+
+
 ## Outputs
 
 - **cluster_role:** The ARN of the EKS cluster role(`eks-cluster`)
 - **node_role:** The ARN of the EKS node group role (`eks-node-group-nodes)`)
+- Provided passwords for users in the "developer" and "masters" groups.
 
 ## Notes
 
