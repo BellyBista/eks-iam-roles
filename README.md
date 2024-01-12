@@ -8,7 +8,7 @@ This Terraform module configures AWS Identity and Access Management (IAM) resour
 
 ```hcl
 module "eks_iam_roles" {
-  source = "git::https://github.com/BellyBista/eks-iam-roles.git?ref=v1.0.0"
+  source = "git::https://github.com/quadri-olamilekan/terraform-eks-iam-roles.git?ref=v1.0.0"
 
   # Add any required variables here
 }
