@@ -90,7 +90,7 @@ module "eks_iam_roles" {
 
 - **cluster_role:** The ARN of the EKS cluster role(`eks-cluster`)
 - **node_role:** The ARN of the EKS node group role (`eks-node-group-nodes)`)
-- Provided passwords for users in the "developer" and "masters" groups.
+- Encrypted passwords for users in the "developer" and "masters" groups.
 
 ## Notes
 
