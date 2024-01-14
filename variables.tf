@@ -12,9 +12,9 @@ variable "cluster_role_name" {
 
 variable "pgp_key" {
   type        = string
-  default     = "keybase:quadribello41"
-  description = "PGP key used for user login profiles"
+  description = "PGP key used for encrypting user login profiles"
 }
+
 
 variable "developer" {
   type        = list(string)
