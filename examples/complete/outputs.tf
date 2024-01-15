@@ -9,11 +9,11 @@ output "cluster_role" {
 }
 
 output "developer_password" {
-  value = module.eks-iam-roles.developer_password
+  value       = module.eks-iam-roles.developer_password
   description = "Provided passwords for users in the developers group"
 }
 
 output "admin_password" {
-  value = module.eks-iam-roles.admin_password
+  value       = module.eks-iam-roles.admin_password
   description = "Provided passwords for users in the masters group"
 }

@@ -43,9 +43,10 @@ data "aws_iam_policy_document" "developer" {
 # Assume role policy for admin user
 data "aws_iam_policy_document" "admin" {
   statement {
-    sid       = "AllowAdmin"
-    effect    = "Allow"
-    actions   = ["*"]
+    sid    = "AllowAdmin"
+    effect = "Allow"
+    actions = ["eks:*"
+    ]
     resources = ["*"]
   }
   statement {
@@ -62,6 +63,9 @@ data "aws_iam_policy_document" "admin" {
     }
   }
 }
+
+
+
 
 data "aws_iam_policy_document" "admin_assume_role" {
   statement {

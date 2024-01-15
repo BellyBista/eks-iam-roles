@@ -7,7 +7,7 @@ variable "pgp_key" {
 
 variable "developer" {
   type        = list(string)
-  default     = ["developer1","developer2"]
+  default     = ["developer1", "developer2"]
   description = "List  developer users"
 }
 

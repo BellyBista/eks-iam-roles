@@ -78,3 +78,63 @@ variable "developer_actions" {
   ]
   description = "Actions permitted for developers"
 }
+
+variable "masters_iam_policy_name" {
+  type        = string
+  default     = "eks-admin"
+  description = "Masters policy name"
+}
+
+variable "masters_iam_role_name" {
+  type        = string
+  default     = "admin-eks-Role"
+  description = "Masters iam role name"
+}
+
+variable "pass_len" {
+  type        = number
+  default     = 14
+  description = "length of password"
+}
+
+variable "max_pass_age" {
+  type        = number
+  default     = 89
+  description = "maximum password age"
+}
+
+variable "pass_reuse" {
+  type        = number
+  default     = 24
+  description = "password reuse prevention"
+}
+
+variable "low_cha" {
+  type        = bool
+  default     = true
+  description = "require lowercase characters for password"
+}
+
+variable "num_cha" {
+  type        = bool
+  default     = true
+  description = "require numbers for password"
+}
+
+variable "sym_cha" {
+  type        = bool
+  default     = true
+  description = "require symbols for password"
+}
+
+variable "up_cha" {
+  type        = bool
+  default     = true
+  description = "require uppercase characters for password"
+}
+
+variable "pass_chge" {
+  type        = bool
+  default     = true
+  description = "allow users to change password "
+}

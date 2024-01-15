@@ -104,7 +104,7 @@ resource "aws_iam_group_membership" "masters_team" {
 }
 
 resource "aws_iam_role" "masters" {
-  name               = "admin-eks-Role"
+  name               = var.masters_iam_role_name
   assume_role_policy = data.aws_iam_policy_document.admin_assume_role.json
 }
 
@@ -114,16 +114,22 @@ resource "aws_iam_role_policy_attachment" "admin_policy" {
 }
 
 resource "aws_iam_policy" "eks_admin" {
-  name   = "eks-admin"
+  name   = var.masters_iam_policy_name
+  path   = "/"
   policy = data.aws_iam_policy_document.admin.json
+
 }
+
+
 
 # Password
 resource "aws_iam_account_password_policy" "strict" {
-  minimum_password_length        = 8
-  require_lowercase_characters   = true
-  require_numbers                = true
-  require_uppercase_characters   = true
-  require_symbols                = true
-  allow_users_to_change_password = true
+  minimum_password_length        = var.pass_len
+  require_lowercase_characters   = var.low_cha
+  require_numbers                = var.num_cha
+  require_uppercase_characters   = var.up_cha
+  require_symbols                = var.sym_cha
+  allow_users_to_change_password = var.pass_chge
+  max_password_age               = var.max_pass_age
+  password_reuse_prevention      = var.pass_reuse
 }
