@@ -30,7 +30,7 @@ Security scanning is graciously provided by Bridgecrew. Bridgecrew is the leadin
 ```hcl
 module "eks-iam-roles" {
   source  = "quadri-olamilekan/eks-iam-roles/aws"
-  version = "1.0.3"
+  version = "1.0.4"
   # insert the 1 required variable here
 }
 ```
