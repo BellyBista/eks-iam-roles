@@ -1,3 +1,7 @@
+provider "aws" {
+  region = var.region
+}
+
 locals {
   eks_policies = [
     "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
