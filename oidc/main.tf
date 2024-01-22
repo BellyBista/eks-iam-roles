@@ -19,7 +19,7 @@ data "aws_iam_policy_document" "git_aws_oidc" {
     condition {
       test     = "StringLike"
       variable = "${replace(data.aws_iam_openid_connect_provider.git.url, "https://", "")}:sub"
-      values   = ["repo:quadri-olamilekan/*:*"]
+      values   = ["repo:quadri-olamilekan/eks-iam-roles:*"]
     }
 
 
