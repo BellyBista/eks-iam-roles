@@ -3,11 +3,11 @@ import tftest
 import pytest
 
 
-tfvars = ["/Users/quadribello/IAM-module/examples/complete/example.tfvars"]
+tfvars = ["./example.tfvars"]
 
 
 @pytest.fixture(params=tfvars)
-def plan(request, directory="/Users/quadribello/IAM-module/examples", module_name="complete"):
+def plan(request, directory="./examples", module_name="complete"):
     tfvars_file = request.param
     tf = tftest.TerraformTest(module_name, directory)
     tf.setup()
