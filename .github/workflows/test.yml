@@ -41,3 +41,20 @@ jobs:
           pytest
         env:
           AWS_ROLE: ${{ secrets.AWS_ROLE }}
+
+  terraform:
+    name: format check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.1.9
+      - name: Initialize
+        run: terraform init
+      - name: validate
+        run: terraform validate
+      - name: format
+        run: terraform fmt -check
