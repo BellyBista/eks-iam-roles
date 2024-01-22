@@ -4,6 +4,13 @@ on:
   push:
     branches: [main]
 
+permissions:
+  id-token: write
+  pull-requests: write
+  statuses: write
+  actions: read
+  contents: read
+
 jobs:
   build:
     name: tests
@@ -32,5 +39,5 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-      secrets:
-        AWS_ROLE: ${{ secrets.AWS_ROLE }}
+        env:
+          AWS_ROLE: ${{ secrets.AWS_ROLE }}
