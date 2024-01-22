@@ -12,6 +12,11 @@ jobs:
     name: tests
     runs-on: ubuntu-latest
     steps:
+      - name: AWS Creds
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: "us-east-1"
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Set up Python 3.8
