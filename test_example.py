@@ -22,3 +22,9 @@ def test_variables(plan):
     assert "pgp_key" in tf_vars
     assert "developer" in tf_vars
     assert "admin" in tf_vars
+
+def test_outputs(plan):
+    assert "node_role" in plan.outputs
+    assert "cluster_role" in plan.outputs
+    assert "developer_password" in plan.outputs
+    assert "admin_password" in plan.outputs
